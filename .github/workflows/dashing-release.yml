@@ -3,10 +3,9 @@ name: Dashing Release
 on:
  push:
     paths:
-      - package.xml
       - 'package.xml'
     branches:
-      - 'dashing/devel'
+      - dashing
 
 jobs:
   bloom-release:
@@ -30,6 +29,6 @@ jobs:
       uses: actions/create-release@v1
       with:
         tag_name: ${{ steps.bloom.outputs.version }}
-        release_name: Release ${{ steps.bloom.outputs.version }}
+        release_name: Dashing Release ${{ steps.bloom.outputs.version }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
