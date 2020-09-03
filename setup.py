@@ -7,7 +7,7 @@ package_name = 'grbl_ros'
 
 setuptools.setup(
     name=package_name,
-    version='0.0.9',
+    version='0.0.11',
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -26,7 +26,7 @@ setuptools.setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'interface = grbl_ros.node:main'
+            'grbl_node = grbl_ros.node:main'
         ],
     },
 )
