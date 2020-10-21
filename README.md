@@ -1,4 +1,4 @@
-# grbl_ros ![Rolling CI](https://github.com/flynneva/grbl_ros/workflows/Rolling%20CI/badge.svg)
+# grbl_ros ![ROS2 CI](https://github.com/flynneva/grbl_ros/workflows/ROS2%20CI/badge.svg)
 
 A simple ROS2 package for interfacing with a [grbl device](https://github.com/gnea/grbl).
 
@@ -10,10 +10,10 @@ Currently supports:
 **All Tier 1 platforms = Windows 10, Mac OS X, and either Ubuntu 18.04 or Ubuntu 20.04**
 OS           | ROS 2 Version | CI Status | 
 ------------ | ------------- | --------- |
-All Tier 1 platforms | [Dashing Diademata](https://index.ros.org/doc/ros2/Releases/Release-Dashing-Diademata/) | ![Dashing CI](https://github.com/flynneva/grbl_ros/workflows/Dashing%20CI/badge.svg) | 
-All Tier 1 platforms | [Eloquent Elusor](https://index.ros.org/doc/ros2/Releases/Release-Eloquent-Elusor/) | ![Eloquent CI](https://github.com/flynneva/grbl_ros/workflows/Eloquent%20CI/badge.svg) |
-All Tier 1 platforms | [Foxy Fitzroy](https://index.ros.org/doc/ros2/Releases/Release-Foxy-Fitzroy/) | ![Foxy CI](https://github.com/flynneva/grbl_ros/workflows/Foxy%20CI/badge.svg) |
-All Tier 1 platforms | [Rolling Ridley](https://index.ros.org/doc/ros2/Releases/Release-Rolling-Ridley/) | ![Rolling CI](https://github.com/flynneva/grbl_ros/workflows/Rolling%20CI/badge.svg) |
+All Tier 1 platforms | [Dashing Diademata](https://index.ros.org/doc/ros2/Releases/Release-Dashing-Diademata/) | 
+All Tier 1 platforms | [Eloquent Elusor](https://index.ros.org/doc/ros2/Releases/Release-Eloquent-Elusor/) |
+All Tier 1 platforms | [Foxy Fitzroy](https://index.ros.org/doc/ros2/Releases/Release-Foxy-Fitzroy/) |
+All Tier 1 platforms | [Rolling Ridley](https://index.ros.org/doc/ros2/Releases/Release-Rolling-Ridley/) |
 
 Dashing and Eloquent target Ubuntu 18.04 while Foxy and Rolling target Ubuntu 20.04.
 
@@ -38,7 +38,6 @@ Unit tests are run on every PR and every release across every supported platform
 Here is a list of potential ideas/features this package could have. Eventually the plan is to add all of these.
 - full grbl command support & descriptions (non-modal commands, motion modes, etc.)
 - safety features that grbl already implements to be translated to ROS (door sensor, estop, endstop, etc.)
-- full file gcode streaming to grbl device
-- publish tf of grbl machine coordinates
+- ROS param control of GRBL settings
 - ROS services for jog control
 - im sure there are more but I cant think of them right now
