@@ -2,25 +2,8 @@
 Changelog for package grbl_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.0.12 (2020-09-03)
+0.0.14
 -----------
-* bump version for dashing
-* Merge pull request `#54 <https://github.com/flynneva/grbl_ros/issues/54>`_ from flynneva/dashing-devel
-  added stream file function
-* added stream file function
-* Merge pull request `#49 <https://github.com/flynneva/grbl_ros/issues/49>`_ from flynneva/dashing-devel
-  fixed execution errors
-* fixed execution errors
-* Merge pull request `#47 <https://github.com/flynneva/grbl_ros/issues/47>`_ from flynneva/dashing-devel
-  Dashing devel
-* Merge branch 'devel' into dashing-devel
-* moved grbl_device.py to _command.py
-* Merge pull request `#40 <https://github.com/flynneva/grbl_ros/issues/40>`_ from flynneva/dashing
-  Dashing
-* Merge pull request `#33 <https://github.com/flynneva/grbl_ros/issues/33>`_ from flynneva/restructure
-  Restructure
-* Contributors: Evan Flynn
-
 * separated methods to semantic file name
 * Delete dashing-release.yml
 * Update dashing-release.yml
@@ -50,17 +33,6 @@ Changelog for package grbl_ros
 * rolling not valid for this setup-ros release
   wait to switch to rolling until next setup-ros release
 * run on rolling for main/devel
-
-0.0.5 (2020-08-24)
-------------------
-* dashing ci
-* Delete release-candidate.yml
-* bump 0.0.3
-* dashing release candidate
-* Delete greetings.yml
-* Delete docs.yml
-* only release dashing on dashing branch
-* import main for dashing/eloquent
 * remove mac from action
 * switched to mac os and back to ros-tooling wg
 * removed mac from matrix
@@ -75,9 +47,6 @@ Changelog for package grbl_ros
 * package should not be in matrix
 * Merge pull request `#10 <https://github.com/flynneva/grbl_ros/issues/10>`_ from flynneva/devel
   added ros source binary for distro
-* removed vcs-repo-file-url param
-* bump action-ros-ci & add vcs repo url
-* package should not be in matrix
 * bumped ros ci to 0.0.18
 * regressed to ros ci 0.0.15
 * specify target distro
@@ -87,12 +56,12 @@ Changelog for package grbl_ros
   update readme and add release actions
 * Merge pull request `#8 <https://github.com/flynneva/grbl_ros/issues/8>`_ from flynneva/update_readme
   Update readme & add release actions
-* Merge pull request `#8 <https://github.com/flynneva/grbl_ros/issues/8>`_ from flynneva/update_readme
 * added release actions
 * added testing section
 * forgot to add ubuntu
 * update readme
 * Contributors: Evan Flynn
+
 
 0.0.2 (2020-08-05)
 ------------------

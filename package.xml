@@ -2,10 +2,15 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>grbl_ros</name>
-  <version>0.0.12</version>
+  <version>0.0.14</version>
+
   <description>ROS2 package to interface with a GRBL serial device</description>
   <maintainer email="evanflynn.msu@gmail.com">Evan Flynn</maintainer>
   <license>MIT</license>
+
+  <depend>rclpy</depend>
+  <depend>grbl_msgs</depend>
+  <depend>std_msgs</depend>
 
   <build_depend>python3-serial</build_depend>
 
