@@ -17,10 +17,16 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
+"""
+Functions to control the GRBL device.
+
+The grbl device control functions
+"""
 
 
 class control(object):
+    """Control class to hold all control functions for the grbl device class."""
 
     def home(self):
-        self.s.write(b'$H\n')
-        return self.s.readline().decode('utf-8').strip()
+        """Home the GRBL device."""
+        self.send(self, '$H')

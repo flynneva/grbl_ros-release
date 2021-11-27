@@ -38,6 +38,14 @@ from tf2_ros.transform_broadcaster import TransformBroadcaster
 
 
 class grbl_node(Node):
+    """
+    A ROS2 node representing a single GRBL device.
+
+    This nodes main function is to publish the real-time pose of the GRBL device as
+    a ROS2 transform (tf).  Additionally it enables the ROS2 user to send GCODE commands
+    and files to the GRBL device and monitor its status.
+
+    """
 
     def __init__(self):
         # TODO(evanflynn): init node with machine_id param input or arg
@@ -47,20 +55,20 @@ class grbl_node(Node):
         self.declare_parameters(
             namespace='',
             parameters=[
-                ('machine_id', None),
-                ('port', None),
-                ('baudrate', None),
-                ('acceleration', None),  # mm / min^2
-                ('x_max', None),  # mm
-                ('y_max', None),  # mm
-                ('z_max', None),  # mm
-                ('default_v', None),  # mm / min
-                ('x_max_v', None),  # mm / min
-                ('y_max_v', None),  # mm / min
-                ('z_max_v', None),  # mm / min
-                ('x_steps', None),  # mm
-                ('y_steps', None),  # mm
-                ('z_steps', None),  # mm
+                ('machine_id', 'cnc_001'),
+                ('port', '/dev/ttyUSB0'),
+                ('baudrate', 115200),
+                ('acceleration', 50),  # mm / min^2
+                ('x_max', 300),  # mm
+                ('y_max', 200),  # mm
+                ('z_max', 150),  # mm
+                ('default_v', 100),  # mm / min
+                ('x_max_v', 150),  # mm / min
+                ('y_max_v', 150),  # mm / min
+                ('z_max_v', 150),  # mm / min
+                ('x_steps', 100),  # mm
+                ('y_steps', 100),  # mm
+                ('z_steps', 100),  # mm
             ])
 
         self.machine_id = self.get_parameter('machine_id').get_parameter_value().string_value
@@ -137,10 +145,17 @@ class grbl_node(Node):
                                    'on serial port ' + self.machine.port)
             self.get_logger().warn('Are you sure the GRBL device '
                                    'is connected and powered on?')
+            self.get_logger().warn(
+                '[ TIP ] Change the serial port and machine ID parameters')
+            self.get_logger().warn(
+                '[ TIP ] in the `grbl_ros/config` yaml file and use it at run-time:')
+            self.get_logger().warn(
+                '[ TIP ]   ros2 run grbl_ros grbl_node '
+                '--ros-args --params-file <path/to/config>.yaml')
             # TODO(evanflynn): set this to a different color so it stands out?
             self.get_logger().info('Node running in `debug` mode')
             self.get_logger().info('GRBL device operation may not function as expected')
-            self.machine.mode = self.grbl_obj.MODE.DEBUG
+            self.machine.mode = self.machine.MODE.DEBUG
 
     def poseCallback(self, request, response):
         self.machine.moveTo(request.position.x,
@@ -150,6 +165,12 @@ class grbl_node(Node):
         return response
 
     def gcodeCallback(self, goal_handle):
+        """
+        Send GCODE ROS2 action callback.
+
+        This is the callback called each time the ROS2 send_gcode_cmd action is called.
+
+        """
         result = SendGcodeCmd.Result()
         status = self.machine.send(str(goal_handle.request.command))
         if(status.find('error') > -1):
@@ -183,6 +204,13 @@ class grbl_node(Node):
         return result
 
     def streamCallback(self, goal_handle):
+        """
+        Send GCODE file ROS2 action callback.
+
+        This is the callback called each time the ROS2 send_gcode_file action is called
+        and calls the send_gcode_cmd action for each line in the given file.
+
+        """
         result = SendGcodeFile.Result()
         # open file to read each line
         f = open(goal_handle.request.file_path, 'r')
@@ -218,6 +246,13 @@ class grbl_node(Node):
         return result
 
     def file_feedback(self, feedback):
+        """
+        Feedback function during the send_gcode_file ROS2 aciton.
+
+        This feedback callback can be called during the send_gcode_file in order to provide
+        feedback to the user as the ROS2 action is executed.
+
+        """
         # self.get_logger().info('received feedback')
         return
 
