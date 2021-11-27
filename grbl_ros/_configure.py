@@ -17,9 +17,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
+"""
+Functions to configure the GRBL device.
+
+The grbl device configure functions
+"""
 
 
 class configure(object):
+    """Configure class to hold all configure functions for the grbl device class."""
 
     def setSpeed(self, speed):
         self.defaultSpeed = speed
@@ -32,16 +38,20 @@ class configure(object):
         self.pos = [x, y, z]
 
     def clearAlarm(self):
+        """Clear the alarm on the GRBL machine."""
         return self.send(self, r'\$X')
 
     def enableSteppers(self):
+        """Enable the motors on the GRBL machine."""
         return self.send(self, 'M17')
 
     def feedHold(self):
+        """Feed hold the GRBL machine."""
         return self.send(self, r'\!')
 
     def disableSteppers(self):
-        return self.send(self, 'M18')
+        """Disable the motors on the GRBL machine."""
+        return self.send(self, 'M17')
 
     def ensureMovementMode(self, absoluteMode=True):
         # GRBL has two movement modes
