@@ -1,3 +1,26 @@
+## grbl_ros (rolling) - 0.0.16-1
+
+The packages in the `grbl_ros` repository were released into the `rolling` distro by running `/usr/bin/bloom-release --rosdistro rolling --track rolling grbl_ros` on `Sat, 27 Nov 2021 19:34:06 -0000`
+
+The `grbl_ros` package was released.
+
+Version of package(s) in repository `grbl_ros`:
+
+- upstream repository: https://github.com/flynneva/grbl_ros.git
+- release repository: https://github.com/flynneva/grbl_ros-release.git
+- rosdistro version: `0.0.15-1`
+- old version: `0.0.15-1`
+- new version: `0.0.16-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.7`
+- catkin_pkg version: `0.4.24`
+- rosdep version: `0.21.0`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## grbl_ros (galactic) - 0.0.16-1
 
 The packages in the `grbl_ros` repository were released into the `galactic` distro by running `/usr/bin/bloom-release --rosdistro galactic --track galactic grbl_ros` on `Sat, 27 Nov 2021 19:29:50 -0000`
