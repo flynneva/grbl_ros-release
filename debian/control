@@ -1,0 +1,12 @@
+Source: ros-galactic-grbl-ros
+Section: misc
+Priority: optional
+Maintainer: Evan Flynn <evanflynn.msu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), python3-pytest, python3-serial, ros-galactic-ament-copyright, ros-galactic-ament-flake8, ros-galactic-ament-pep257, ros-galactic-grbl-msgs, ros-galactic-rclpy, ros-galactic-std-msgs, ros-galactic-ros-workspace, python3-all, python3-setuptools
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-galactic-grbl-ros
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-galactic-grbl-msgs, ros-galactic-rclpy, ros-galactic-std-msgs, ros-galactic-ros-workspace
+Description: ROS2 package to interface with a GRBL serial device
