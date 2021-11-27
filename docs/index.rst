@@ -6,11 +6,18 @@
 Welcome
 ====================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+The grbl_ros package is meant to provide an easy way to connect and interface your GRBL device with ROS2.  By doing this, we hope to combine these two great open-source communities and allow for anyone to achieve their automation dreams.  ROS2 can provide interfacing with robotic arms, 2D cameras and various other automation tools that could greatly increase productivity for GRBL users.
 
-   grbl_ros
+.. toctree::
+    :maxdepth: 3
+    :caption: Contents:
+
+    device
+    init
+    command
+    control
+    configure
+    logging
 
 Indices and tables
 ==================
