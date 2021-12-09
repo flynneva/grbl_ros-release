@@ -1,0 +1,12 @@
+Source: ros-rolling-grbl-ros
+Section: misc
+Priority: optional
+Maintainer: Evan Flynn <evanflynn.msu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), python3-pytest, python3-serial, ros-rolling-ament-copyright, ros-rolling-ament-flake8, ros-rolling-ament-pep257, ros-rolling-grbl-msgs, ros-rolling-rclpy, ros-rolling-std-msgs, ros-rolling-ros-workspace, python3-all, python3-setuptools
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-rolling-grbl-ros
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-rolling-grbl-msgs, ros-rolling-rclpy, ros-rolling-std-msgs, ros-rolling-ros-workspace
+Description: ROS2 package to interface with a GRBL serial device
